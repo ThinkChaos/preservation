@@ -17,7 +17,8 @@
           {
             checks = {
               default = pkgs.testers.nixosTest (import ./basic.nix pkgs);
-              firstboot = pkgs.testers.nixosTest (import ./firstboot.nix pkgs);
+              firstboot-bind-mount = pkgs.testers.runNixOSTest (import ./firstboot-bind-mount.nix pkgs);
+              firstboot-symlink = pkgs.testers.nixosTest (import ./firstboot-symlink.nix pkgs);
               verity-image = pkgs.testers.nixosTest (import ./appliance-image-verity.nix pkgs);
             };
           };
