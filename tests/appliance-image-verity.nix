@@ -22,7 +22,7 @@ pkgs:
               inInitrd = true;
               how = "symlink";
               configureParent = true;
-              createLinkTarget = true;
+              createLinkTarget = false;
             }
           ];
         };
@@ -37,7 +37,7 @@ pkgs:
         ];
       };
 
-      boot.initrd.systemd.tmpfiles.settings.preservation."/sysroot/persistent/etc/machine-id".f = {
+      boot.initrd.systemd.tmpfiles.settings.machine-id."/sysroot/persistent/etc/machine-id".f = {
         argument = "uninitialized";
       };
 
